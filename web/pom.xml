@@ -1,0 +1,136 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>ait.app</groupId>
+		<artifactId>HelloWorldApp</artifactId>
+		<version>2.0</version>
+	</parent>
+	<artifactId>web</artifactId>
+	<name>web</name>
+
+
+	<packaging>war</packaging>
+
+
+	<url>https://maven.apache.org</url>
+	<repositories>
+	    <repository>
+	        <id>jboss-public-repository-group</id>
+	        <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+	    </repository>
+	</repositories>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>javax.faces</groupId>
+			<artifactId>javax.faces-api</artifactId>
+			<version>2.2</version>
+			
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.faces</artifactId>
+			<version>2.2.10</version>
+			
+		</dependency>
+
+		<dependency>
+
+			<groupId>com.sun.faces</groupId>
+
+			<artifactId>jsf-api</artifactId>
+
+			<version>2.2.10</version>
+
+		</dependency>
+
+		<dependency>
+
+			<groupId>com.sun.faces</groupId>
+
+			<artifactId>jsf-impl</artifactId>
+
+			<version>2.2.10</version>
+
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+
+		</dependency>
+
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>javax.el-api</artifactId>
+			<version>3.0.0</version>
+
+		</dependency>
+
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+
+		</dependency>
+		
+		<dependency>
+			<groupId>ait.app</groupId>
+			<artifactId>service</artifactId>
+			<version>2.0</version>
+			<scope>provided</scope>
+		</dependency>
+		
+			<!-- slf4j log4j binging (for waffle) -->
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-log4j12</artifactId>
+		    <version>1.7.14</version>
+		</dependency>
+		
+    <!-- RichFaces libraries start-->
+    <dependency>
+		<groupId>org.richfaces</groupId>
+		<artifactId>richfaces</artifactId>
+		<version>4.5.5.Final</version>
+		
+	</dependency>
+	<dependency>
+		<groupId>org.richfaces</groupId>
+		<artifactId>richfaces-a4j</artifactId>
+		<version>4.5.5.Final</version>
+		
+	</dependency>
+	<dependency>
+		<groupId>org.richfaces</groupId>
+		<artifactId>richfaces-core</artifactId>
+		<version>4.5.5.Final</version>
+		
+	</dependency>
+	<dependency>
+	        <artifactId>guava</artifactId>
+	        <groupId>com.google.guava</groupId>
+	        <version>19.0</version>
+		</dependency>
+	<dependency>
+	  	<groupId>org.richfaces.cdk</groupId>
+	  	<artifactId>annotations</artifactId>
+	  	<version>4.5.0.Final</version>
+	</dependency>
+	
+
+	
+   <!-- RichFaces libraries end-->
+	
+
+	</dependencies>
+
+	<build>
+		<finalName>web</finalName>
+		<outputDirectory>war/WEB-INF/classes</outputDirectory>
+
+	</build>
+</project>

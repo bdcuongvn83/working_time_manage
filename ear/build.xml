@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ear" default="copy-pe4j-engine" basedir=".">
+   
+	<target name="copy-pe4j-engine">
+		<copy todir="../pe4j-engine-entity/target/classes">
+			<fileset dir="../pe4j-engine-entity/src/main/resources">
+				<include name="**/*" />
+				<exclude name="**/.svn/**"/>
+			</fileset>
+		</copy>
+		
+	</target>
+
+
+
+
+</project>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+    
+    
+   
+    
+       <navigation-rule>
+
+                <from-view-id>login.xhtml</from-view-id>
+
+                <navigation-case>
+
+                        <from-outcome>main</from-outcome>
+
+                        <to-view-id>main.xhtml</to-view-id>
+						<redirect/>
+                </navigation-case>
+
+                <navigation-case>
+
+                        <from-outcome>failure</from-outcome>
+                        <to-view-id>failure.xhtml</to-view-id>
+						<redirect/>
+                </navigation-case>
+
+        </navigation-rule>
+        
+        <navigation-rule>
+
+                <from-view-id>/facelets/empList.xhtml</from-view-id>
+
+                <navigation-case>
+                        <from-outcome>register</from-outcome>
+                        <to-view-id>/facelets/empRegister.xhtml</to-view-id>
+                        <redirect/>
+                </navigation-case>
+        </navigation-rule>
+        
+        <navigation-rule>
+
+                <from-view-id>/facelets/empRegister.xhtml</from-view-id>
+
+                <navigation-case>
+                        <from-outcome>back</from-outcome>
+                        <to-view-id>/facelets/empList.xhtml</to-view-id>
+                        <redirect/>
+                </navigation-case>
+                <navigation-case>
+                        <from-outcome>empList</from-outcome>
+                        <to-view-id>/facelets/empList.xhtml</to-view-id>
+                        <redirect/>
+                </navigation-case>
+        </navigation-rule>
+        
+         <navigation-rule>
+
+                <from-view-id>/PRJ/projectList.xhtml</from-view-id>
+
+                <navigation-case>
+                        <from-outcome>register</from-outcome>
+                        <to-view-id>/PRJ/projectRegister.xhtml</to-view-id>
+                        <redirect/>
+                </navigation-case>
+        </navigation-rule>
+        
+        <navigation-rule>
+
+                <from-view-id>/PRJ/projectRegister.xhtml</from-view-id>
+
+                <navigation-case>
+                        <from-outcome>back</from-outcome>
+                        <to-view-id>/PRJ/projectList.xhtml</to-view-id>
+                        <redirect/>
+                </navigation-case>
+                <navigation-case>
+                        <from-outcome>projectList</from-outcome>
+                        <to-view-id>/PRJ/projectList.xhtml</to-view-id>
+                        <redirect/>
+                </navigation-case>
+        </navigation-rule>
+        
+         <navigation-rule>
+
+                <from-view-id>/TAS/taskList.xhtml</from-view-id>
+
+                <navigation-case>
+                        <from-outcome>register</from-outcome>
+                        <to-view-id>/TAS/taskRegister.xhtml</to-view-id>
+                        <redirect/>
+                </navigation-case>
+        </navigation-rule>
+        
+        <navigation-rule>
+
+                <from-view-id>/TAS/taskRegister.xhtml</from-view-id>
+
+                <navigation-case>
+                        <from-outcome>back</from-outcome>
+                        <to-view-id>/TAS/taskList.xhtml</to-view-id>
+                        <redirect/>
+                </navigation-case>
+                <navigation-case>
+                        <from-outcome>taskList</from-outcome>
+                        <to-view-id>/TAS/taskList.xhtml</to-view-id>
+                        <redirect/>
+                </navigation-case>
+        </navigation-rule>
+        
+        <navigation-rule>
+
+                <from-view-id>/WKT/wktList.xhtml</from-view-id>
+
+                <navigation-case>
+                        <from-outcome>register</from-outcome>
+                        <to-view-id>/WKT/wktRegister.xhtml</to-view-id>
+                        <redirect/>
+                </navigation-case>
+        </navigation-rule>
+        
+        <navigation-rule>
+
+                <from-view-id>/WKT/wktRegister.xhtml</from-view-id>
+
+                <navigation-case>
+                        <from-outcome>back</from-outcome>
+                        <to-view-id>/WKT/wktList.xhtml</to-view-id>
+                        <redirect/>
+                </navigation-case>
+                <navigation-case>
+                        <from-outcome>wktList</from-outcome>
+                        <to-view-id>/WKT/wktList.xhtml</to-view-id>
+                        <redirect/>
+                </navigation-case>
+        </navigation-rule>
+        
+        <navigation-rule>
+
+                <from-view-id>main.xhtml</from-view-id>
+
+                <navigation-case>
+                        <from-outcome>login</from-outcome>
+                        <to-view-id>login.xhtml</to-view-id>
+                        <redirect/>
+                </navigation-case>
+        </navigation-rule>
+        
+         <navigation-rule>
+
+                <from-view-id>/facelets/test.xhtml</from-view-id>
+
+                 <navigation-case>
+
+                        <from-outcome>main</from-outcome>
+
+                        <to-view-id>main.xhtml</to-view-id>
+						<redirect/>
+                </navigation-case>
+
+                <navigation-case>
+
+                        <from-outcome>failure</from-outcome>
+
+                        <to-view-id>failure.xhtml</to-view-id>
+						<redirect/>
+                </navigation-case>
+
+        </navigation-rule>
+        
+        <lifecycle>
+		    <phase-listener>service.JSFPhaseListener</phase-listener>
+		</lifecycle>
+		
+		<factory>
+	        <exception-handler-factory>net.jsf.CustomExceptionHandlerFactory</exception-handler-factory>
+	    </factory>
+    
+    
+</faces-config>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:rich="http://richfaces.org/rich">
+
+<h:head>
+<link rel="stylesheet" type="text/css" href="#{request.contextPath}/css/main.css"/>
+<f:metadata>
+	<f:viewAction action="#{project01Bean.init}"/>
+</f:metadata>
+
+
+</h:head>
+
+
+<h:body>
+
+	<h:form>
+		<h1>Project List</h1>
+
+		<h:panelGrid columns="2">
+
+			<h:commandButton value="NEW" action="#{project01Bean.toRegister}" />
+
+			<h:commandButton value="SEARCH" action="#{project01Bean.search}" />
+
+
+		</h:panelGrid>
+
+	</h:form>
+
+	<div class="contents">
+		<rich:dataTable border="1" cellpadding="0" cellspacing="0"
+			id="richDataTable" value="#{project01Bean.dataModel}" var="item"
+			rowKeyVar="rowIndex"
+			headerClass="rich-data-table-header"
+			    rowClass="rich-data-table-row"
+			    rowClasses="rich-data-table-row,rich-data-table-row-alt">
+
+			<f:facet name="header">
+				<rich:columnGroup>
+					<!-- DragDrop -->
+					<rich:column style="width:10px">ProjectId&#160;</rich:column>
+					<rich:column style="width:100px">projectName&#160;</rich:column>
+					<rich:column style="width:100px">startDate&#160;</rich:column>
+					<rich:column style="width:100px">endDate&#160;</rich:column>
+					<rich:column style="width:20px">status&#160;</rich:column>
+					<rich:column style="width:10px">Action&#160;</rich:column>
+				</rich:columnGroup>
+			</f:facet>
+
+			<rich:column style="width:100px">#{item.id}
+                        </rich:column>
+			<rich:column style="width:100px">#{item.projectName}
+                        </rich:column>
+			<rich:column>
+				<div><h:outputText value="#{item.startDate}">
+					<f:convertDateTime pattern = "dd-MM-yyyy" />
+				</h:outputText> </div>
+			</rich:column>
+			<rich:column>
+				<div><h:outputText value="#{item.endDate}">
+					<f:convertDateTime pattern = "dd-MM-yyyy" />
+				</h:outputText> </div>
+			</rich:column>
+			
+			<rich:column>
+				<div><h:outputText value="#{item.status}">
+				</h:outputText> </div>
+			</rich:column>
+			<rich:column>
+				<a href="">Delete</a>
+			</rich:column>
+
+		</rich:dataTable>
+	</div>
+
+
+
+</h:body>
+
+</html>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>ait.app</groupId>
+    <artifactId>HelloWorldApp</artifactId>
+    <version>2.0</version>
+  </parent>
+  <artifactId>ear</artifactId>
+  <name>ear</name>
+	<packaging>ear</packaging>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+	      <groupId>ait.app</groupId>
+	      <artifactId>service</artifactId>
+	      <version>2.0</version>
+	      <type>ejb</type>
+	      <scope>system</scope>
+	      <systemPath>${basedir}/../service/target/service-2.0.jar</systemPath>
+    	</dependency>
+		
+		<dependency>
+			<groupId>ait.app</groupId>
+			<artifactId>web</artifactId>
+			<version>2.0</version>
+			<type>war</type>
+		</dependency>
+		
+		<dependency>
+	      <groupId>ait.app</groupId>
+	      <artifactId>entity</artifactId>
+     	  <version>2.0</version>
+	      <type>jar</type>
+	      <scope>system</scope>
+	      <systemPath>${basedir}/../entity/target/entity-2.0.jar</systemPath>
+	    </dependency>
+	    
+	    <dependency>
+	      <groupId>ait.app</groupId>
+	      <artifactId>pe4j_main_jpa</artifactId>
+     	  <version>2.0</version>
+	      <type>jar</type>
+	      <scope>system</scope>
+	      <systemPath>${basedir}/../pe4j_main_jpa/target/pe4j_main_jpa-2.0.jar</systemPath>
+	    </dependency>
+	</dependencies>
+	
+	<build>
+		<finalName>pe4j-ear</finalName>
+		<pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.3.1</version>
+				
+				
+				<configuration>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<modules>
+						<ejbModule>
+			              <groupId>ait.app</groupId>
+			              <artifactId>service</artifactId>
+			            </ejbModule>
+						<webModule>
+							<groupId>ait.app</groupId>
+							<artifactId>web</artifactId>
+							 <contextRoot>/pe4j</contextRoot>
+						</webModule>
+						
+						
+						<jarModule>
+			              <groupId>ait.app</groupId>
+			              <artifactId>entity</artifactId>
+			            </jarModule>
+			            <jarModule>
+			              <groupId>ait.app</groupId>
+			              <artifactId>pe4j_main_jpa</artifactId>
+			            </jarModule>
+					</modules>
+					
+                    </configuration>
+			</plugin>
+			
+		</plugins>
+		</pluginManagement>
+	</build>
+</project>

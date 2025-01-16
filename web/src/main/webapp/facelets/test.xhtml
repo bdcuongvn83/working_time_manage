@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:p="http://mystudy.com/tags">
+	
+
+<h:head>
+
+</h:head>
+
+
+<h:body style="background-color:yellow">
+
+	<h:form>
+		<h1>List Employee</h1>
+
+		<h:panelGrid columns="2">
+		<div>aaa</div>
+		<p:helloComponent message="#{test01Bean.message}" time="#{test01Bean.time}"/>
+
+		<a4j:commandButton action="#{test01Bean.search}"
+				value="Get greeting1a" reRender="greeting" />
+				
+			<a4j:commandLink ajaxSingle="true" action="#{test01Bean.search()}"
+				styleClass="text-decoration: none;">search link</a4j:commandLink>
+			<a4j:log></a4j:log>	
+		</h:panelGrid>
+
+	</h:form>
+
+
+	
+
+</h:body>
+
+</html>

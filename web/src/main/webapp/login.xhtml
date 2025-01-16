@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+
+<f:metadata>
+	<f:viewAction action="#{loginBean.init}"/>
+</f:metadata>
+
+</h:head>
+
+<h:body style="background-color:yellow">
+
+        <h:form>
+
+                <h1>Login</h1>
+
+                <h:panelGrid columns="2">
+
+                <h:outputText value="Enter your name"/>
+
+                <h:inputText id="nme" value="#{loginBean.userId}"/>
+
+               
+
+                <h:outputText value="Enter your password"/>
+
+                <h:inputSecret id ="pwd" value="#{loginBean.password}"/>
+
+               
+
+                <h:commandButton value="LOGIN" action ="#{loginBean.login}"/>
+
+                </h:panelGrid>
+
+        </h:form>
+
+</h:body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<h:head>
+
+
+	<f:metadata>
+		<f:viewAction action="#{workTime02Bean.init}" />
+	</f:metadata>
+
+
+	<link rel="stylesheet" type="text/css"
+		href="#{request.contextPath}/css/main.css" />
+
+</h:head>
+
+
+<h:body >
+
+	<h:form>
+		<h:messages></h:messages>
+		<div class="contents title_center">
+			Working time Register
+		</div>
+			
+		<div class="contents"  style="margin-top: 10px">
+			<h:panelGrid columns="2" styleClass="content">
+				<h:outputText value="Enter taskid" styleClass="item_label" />
+				<h:inputText value="#{workTime02Bean.wktDto.taskid}" required="true" requiredMessage="taskid is required"
+					styleClass="item_input" />
+
+				<h:outputText value="Enter wktDate" styleClass="item_label" />
+				<h:panelGroup>
+					<h:inputText  value="#{workTime02Bean.wktDto.wktDate}" required="true" requiredMessage="wktDate is required"
+						styleClass="item_input" >
+						<f:convertDateTime pattern="yyyy-MM-dd"/> 
+						</h:inputText>
+					<div class="guidance">
+						<h:outputText value="input format: yyyy-MM-dd" />
+					</div>	
+				</h:panelGroup>
+
+				<h:outputText value="Enter wkttime" styleClass="item_label" />
+				<h:inputText value="#{workTime02Bean.wktDto.wkttime}" required="true" requiredMessage="wkttime is required"
+					styleClass="item_input" />
+				
+
+			</h:panelGrid>
+			
+		</div>
+		<div class="contents" style="margin-top: 10px">
+			<h:commandButton value="BACK" action="#{workTime02Bean.back}" 
+				styleClass="btn_default" immediate="true"/>&#160;&#160;
+				 <h:commandButton value="OK" action="#{workTime02Bean.register}"
+				styleClass="btn_normal" />
+		</div>
+
+	</h:form>
+
+</h:body>
+
+</html>

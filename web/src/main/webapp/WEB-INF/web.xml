@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="6.0">
+  <display-name>web</display-name>
+  
+  
+	
+  <context-param>
+		<description>Absolute path for webapp(V1.x compatible)</description>
+		<param-name>applbase</param-name>
+		<param-value>/pe4j/</param-value>
+	</context-param>
+ 
+  <servlet>
+    <servlet-name>Faces Servlet</servlet-name>
+    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+	<filter>
+		<filter-name>AuthFilter</filter-name>
+		<filter-class>net.login.AuthFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>AuthFilter</filter-name>
+		
+		 <url-pattern>*.jsf</url-pattern> <!-- Áp dụng cho các trang .jsf -->
+	     <url-pattern>*.xhtml</url-pattern> 
+	    
+	</filter-mapping>
+  
+	
+
+  <!-- Map these files with JSF -->
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>/faces/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.jsf</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.faces</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+	
+	<context-param>
+        <param-name>org.richfaces.LoadScriptStrategy</param-name>
+        <param-value>ALL</param-value>
+    </context-param>
+    <context-param>
+        <param-name>org.richfaces.LoadStyleStrategy</param-name>
+        <param-value>ALL</param-value>
+    </context-param>
+    <context-param>
+        <param-name>org.richfaces.resourceOptimization.enabled</param-name>
+        <param-value>false</param-value>
+    </context-param>
+	<context-param>
+	    <param-name>org.richfaces.skin</param-name>
+	    <param-value>plain</param-value>
+	</context-param>
+	
+	 <context-param>
+	    <param-name>facelets.LIBRARIES</param-name>
+	    <param-value>/WEB-INF/my.taglib.xml</param-value>
+	 </context-param>
+	
+    <servlet>
+        <servlet-name>Resource Servlet</servlet-name>
+        <servlet-class>org.richfaces.webapp.ResourceServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Resource Servlet</servlet-name>
+        <url-pattern>/org.richfaces.resources/*</url-pattern>
+    </servlet-mapping>
+    
+    <!-- disable SKIN RF 4 -->
+	<context-param>
+	    <param-name>org.richfaces.enableControlSkinning</param-name>
+	    <param-value>false</param-value>
+	</context-param>
+	<!-- Use document saved as *.xhtml -->
+	<context-param>
+		<param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+		<param-value>.xhtml</param-value>
+	</context-param>
+	<!-- Special debug output for development -->
+	<context-param>
+		<param-name>facelets.DEVELOPMENT</param-name>
+		<param-value>false</param-value>
+	</context-param>
+	<!-- Optional JSF-RI Parameters to help debug -->
+	
+	<context-param>
+		<description>write state info after opening form tag</description>
+		<param-name>com.sun.faces.writeStateAtFormEnd</param-name>
+		<param-value>false</param-value>
+	</context-param>
+	
+		
+<listener>
+
+   <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
+
+</listener>
+		
+  
+</web-app>
