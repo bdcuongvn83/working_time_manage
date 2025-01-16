@@ -10,12 +10,13 @@ Refer tutorial like below url:
 https://howtodoinjava.com/maven/multi-module-project-eclipse/  
 
 # The features of this software include:  
-Admin Management Functions: 
+### Admin Management Functions: 
 ► A. Manage employees (table: tb_employee)  
 ► B. Manage Project (table: tb_project)  
-► C. Manage Task (table: tb_task),   
+► C. Manage Task (table: tb_task)
+### User functions: 
 ► D. Manage Working time(table: tb_workingtime)  
-
+► E. Login/Logout/validate authority pages ( when access pages if not login, can not access)  
 
 # Techniques used in this project:  
 ✔ JavaEE, JPA, JSF, richface/primefaces, MVC  
