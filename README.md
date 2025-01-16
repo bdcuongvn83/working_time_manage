@@ -1,8 +1,8 @@
-# JSFDemo
-Author: DUC CUONG BUI  
-Project: School manage aspnetcore  
-GitHub Repository URL : (https://github.com/bdcuongvn83/working_time_manage.git))  
-License: GPL License  
+
+**Author**: DUC CUONG BUI  
+**Project:** School manage aspnetcore  
+**GitHub Repository URL**: (https://github.com/bdcuongvn83/working_time_manage.git))  
+**License**: GPL License  
 
 # Demo
 
@@ -40,6 +40,10 @@ https://github.com/user-attachments/assets/6e9f1e56-e232-4c34-a224-e7905ab5476c
 # ERD structure:  
 
 ![image](https://github.com/user-attachments/assets/a5047990-7104-404b-b451-b40aab8bc184)
+
+# Source code structure:  
+
+![image](https://github.com/user-attachments/assets/cbe07531-1dd7-4987-88a6-ae44a9cc141e)  
 
 
 ## Getting started  
