@@ -52,11 +52,12 @@ public class Emp02Bean implements Serializable {
 			employeeDto = new EmployeeDto(empployeeService.getEmployee(empId));
 			mode = "update";
 		} else {
-			System.out.println("mode update");
+			System.out.println("mode update modify 2");
+			System.out.println("mode update modify 3");
+			
 			// mode new
 			resetData();
 		}
-		
 	}
 	private void resetData() {
 		employeeDto = new EmployeeDto();

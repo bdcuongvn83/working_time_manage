@@ -47,6 +47,7 @@ public class Emp01Bean implements Serializable {
 	
 	public void init() {
 		System.out.println("emp01Bean init");
+		System.out.println("emp01Bean init2");
 		search();
 	}
 	

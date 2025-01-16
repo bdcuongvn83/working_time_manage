@@ -5,11 +5,13 @@ package net.mystudy.wkt;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.enterprise.context.ConversationScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.faces.model.SelectItem;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -50,8 +52,13 @@ public class WorkTime02Bean implements Serializable {
 	private Long taskIdParam;
 	private WorkingTimeDto taskParam;
 
+
+	
+	
 	/**
 	 * initialize
+	 * TODO not support dang ky task ben trong working time.
+	 * Task ID luon co, chi co working time o task do co (update) hay khong co(insert workingtime)
 	 */
 	public void init() {
 		// from link Edit from MH List
@@ -60,13 +67,12 @@ public class WorkTime02Bean implements Serializable {
 			taskParam = (WorkingTimeDto) FlashUtils.getFlash("taskParam");
 		}
 		if (taskParam != null) {
+			
 			// mode edit
-			WorkingTime wkTime = projectService.findWorkingTimeByTaskId(taskIdParam, new Date());
+			WorkingTime wkTime = projectService.findWorkingTimeByTaskId(taskParam.getTaskid(), taskParam.getWktDate());
 			if (wkTime != null) {
 				wktDto = new WorkingTimeDto(wkTime);
 			} else {
-//				wktDto = new WorkingTimeDto();
-//				wktDto.setTaskid(taskIdParam);
 				wktDto = taskParam;
 			}
 		} else {

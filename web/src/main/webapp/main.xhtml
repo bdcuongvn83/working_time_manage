@@ -31,35 +31,38 @@
 	        </header>
 	   
          </div>
-
-    <!-- Navigation -->
-    <div class="main-navi">
-        <div class="main-navi-container-flex">
-            <div class="left-group">
-                <span class="item">
-                    <h:outputLink value="#{request.contextPath}/main.jsf">Home</h:outputLink>
-                </span>
-                <span class="item">
-                    <h:outputLink value="#{request.contextPath}/facelets/empList.jsf" target="iframe-content">Employee</h:outputLink>
-                </span>
-                <span class="item">
-                    <h:outputLink value="#{request.contextPath}/PRJ/projectList.jsf" target="iframe-content">ProjectList</h:outputLink>
-                </span>
-                <span class="item">
-                    <h:outputLink value="#{request.contextPath}/TAS/taskList.jsf" target="iframe-content">Task</h:outputLink>
-                </span>
-                <span class="item">
-                    <h:outputLink value="#{request.contextPath}/WKT/wktList.jsf" target="iframe-content">WorkingTime</h:outputLink>
-                </span>
-            </div>
-
-            <div class="right-group">
-                <div class="item">
-                    <h:commandLink value="Logout" action="#{mainControlBean.logout}"></h:commandLink>
-                </div>
-            </div>
-        </div>
-    </div>
+    <h:form>
+	
+	    <!-- Navigation -->
+	    <div class="main-navi">
+	        <div class="main-navi-container-flex">
+	            <div class="left-group">
+	                <span class="item">
+	                    <h:outputLink value="#{request.contextPath}/home.jsf" target="iframe-content">Home</h:outputLink>
+	                </span>
+	                <span class="item">
+	                    <h:outputLink value="#{request.contextPath}/facelets/empList.jsf" target="iframe-content">Employee</h:outputLink>
+	                </span>
+	                <span class="item">
+	                    <h:outputLink value="#{request.contextPath}/PRJ/projectList.jsf" target="iframe-content">ProjectList</h:outputLink>
+	                </span>
+	                <span class="item">
+	                    <h:outputLink value="#{request.contextPath}/TAS/taskList.jsf" target="iframe-content">Task</h:outputLink>
+	                </span>
+	                <span class="item">
+	                    <h:outputLink value="#{request.contextPath}/WKT/wktList.jsf" target="iframe-content">WorkingTime</h:outputLink>
+	                </span>
+	            </div>
+	
+	            <div class="right-group">
+	                <div class="item">
+	                    <h:commandLink value="Logout" action="#{mainControlBean.logout}"></h:commandLink>
+	                </div>
+	            </div>
+	        </div>
+	        
+	    </div>
+    </h:form>
 
     <!-- Main Content Area -->
     <div class="main-content">

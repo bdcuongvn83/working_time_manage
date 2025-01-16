@@ -6,38 +6,68 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
+<link rel="stylesheet" type="text/css" href="#{request.contextPath}/css/main.css"/>
+<style>
+.contents {
+    border-radius: 8px; /* Bo góc nhẹ */
+    padding: 20px; /* Khoảng cách nội dung và viền */
+    background-color: #fff; /* Nền trắng */
+    width: 95%; /* Chiếm 95% chiều rộng màn hình */
+    margin: auto; /* Căn giữa */
+    border: 1px solid #ccc; /* Viền cho vùng */
+}
 
+.title_center{
+	font-weight: bold;
+}
+.title_center:before {
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    content: "";
+    display: inline-block;
+    margin-left: -12px;
+    width: 7px;
+    height: 16px;
+    position: absolute;
+    margin-top: 2px;
+    
+}
+.title_center:before {
+    background-color: #2B375D;
+}
+
+</style>
 <f:metadata>
 	<f:viewAction action="#{loginBean.init}"/>
 </f:metadata>
 
 </h:head>
 
-<h:body style="background-color:yellow">
+<h:body style="background-color:#EAEAE0">
 
-        <h:form>
-
-                <h1>Login</h1>
-
-                <h:panelGrid columns="2">
-
-                <h:outputText value="Enter your name"/>
-
-                <h:inputText id="nme" value="#{loginBean.userId}"/>
-
-               
-
-                <h:outputText value="Enter your password"/>
-
-                <h:inputSecret id ="pwd" value="#{loginBean.password}"/>
-
-               
-
-                <h:commandButton value="LOGIN" action ="#{loginBean.login}"/>
-
-                </h:panelGrid>
-
-        </h:form>
+	 <div class="contents title_center">Login</div>
+	<div class="contents" style="margin-top:10px">
+	        <h:form>
+	        
+			<h:messages style="color: red;" globalOnly="false" />
+	
+	                <h:panelGrid columns="2">
+	
+	                <h:outputText value="Enter userId"/>
+	
+	                <h:inputText id="nme" value="#{loginBean.userId}" required="true" requiredMessage="UserId is required!" />
+	
+	                <h:outputText value="Enter password"/>
+	
+	                <h:inputSecret id ="pwd" value="#{loginBean.password}" required="true" requiredMessage="Password is required!"/>
+	
+	                <h:commandButton value="LOGIN" action ="#{loginBean.login}"/>
+	
+	                </h:panelGrid>
+	
+	        </h:form>
+	</div>
 
 </h:body>
 

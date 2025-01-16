@@ -59,7 +59,10 @@ public class WorkTime01Bean implements Serializable {
 	private LoginUser loginUser;
 	
 	public void init() {
-		selectedDate = new Date();
+		//condition search giu lai
+		if (selectedDate == null) {
+			selectedDate = new Date();
+		}
 		search();
 	}
 	
@@ -87,6 +90,7 @@ public class WorkTime01Bean implements Serializable {
 			//dto.setWktDate(new Date());
 			if (loged_wk != null) { 
 				dto.setWkttime(loged_wk.getWkttime());
+				dto.setWktDate(loged_wk.getWktDate());
 				dto.setId(loged_wk.getId());
 			}else {
 				dto.setWktDate(selectedDate);

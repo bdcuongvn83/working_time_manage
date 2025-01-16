@@ -36,13 +36,13 @@
 				<h:outputText value="Enter startDate" styleClass="item_label" />
 				<h:inputText value="#{project02Bean.projectDto.startDate}"
 					styleClass="item_input" >
-					<f:convertDateTime pattern="dd-MM-yyyy"/> 
+					<f:convertDateTime pattern="dd-MM-yyyy" timeZone="Australia/Sydney"/> 
 				</h:inputText>
 				
 				<h:outputText value="Enter startDate" styleClass="item_label" />
 				<h:inputText value="#{project02Bean.projectDto.endDate}"
 					styleClass="item_input" >
-					<f:convertDateTime pattern="dd-MM-yyyy"/> 
+					<f:convertDateTime pattern="dd-MM-yyyy" timeZone="Australia/Sydney"/>
 				</h:inputText>
 
 			</h:panelGrid>

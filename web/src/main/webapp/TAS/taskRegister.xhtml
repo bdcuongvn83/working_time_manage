@@ -35,17 +35,21 @@
 					styleClass="item_input" />
 
 				<h:outputText value="Select taskEmpId" styleClass="item_label" />
-				<h:inputText value="#{task02Bean.taskDto.taskEmpId}" required="true" requiredMessage="taskEmpId is required"
-					styleClass="item_input" />
+			
+				 <h:selectOneMenu  styleClass="item_input" value="#{task02Bean.taskDto.taskEmpId}" required="true" requiredMessage="taskEmpId is required">
+			        <f:selectItems value="#{task02Bean.itemEmpList}" />
+			    </h:selectOneMenu>	
 
 				<h:outputText value="Select projectId" styleClass="item_label" />
-				<h:inputText value="#{task02Bean.taskDto.projectid}" required="true" requiredMessage="projectId is required"
-					styleClass="item_input" />
+				
+				 <h:selectOneMenu  styleClass="item_input" value="#{task02Bean.taskDto.projectid}" required="true" requiredMessage="projectId is required">
+			        <f:selectItems value="#{task02Bean.itemProjectList}" />
+			    </h:selectOneMenu>	
 					
 				<h:outputText value="Enter startdate" styleClass="item_label" />
 				<h:panelGroup>
 					<h:inputText value="#{task02Bean.taskDto.startdate}" styleClass="item_input" >
-						<f:convertDateTime pattern="yyyy-MM-dd"/> 
+						<f:convertDateTime pattern="yyyy-MM-dd" timeZone="Australia/Sydney"/> 
 					</h:inputText>
 					<div class="guidance">
 							<h:outputText value="input format: yyyy-MM-dd" />
@@ -56,7 +60,7 @@
 				<h:panelGroup>
 					<h:inputText value="#{task02Bean.taskDto.enddate}"
 						styleClass="item_input" >
-						<f:convertDateTime pattern="yyyy-MM-dd"/> 
+						<f:convertDateTime pattern="yyyy-MM-dd" timeZone="Australia/Sydney"/> 
 					</h:inputText>
 					<div class="guidance">
 								<h:outputText value="input format: yyyy-MM-dd" />

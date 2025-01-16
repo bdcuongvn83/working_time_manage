@@ -55,16 +55,16 @@
 
 			<rich:column style="width:100px">#{item.id}
                         </rich:column>
-			<rich:column style="width:100px">#{item.projectName}
+			<rich:column style="width:100px"><a href="">#{item.projectName}</a>
                         </rich:column>
 			<rich:column>
 				<div><h:outputText value="#{item.startDate}">
-					<f:convertDateTime pattern = "dd-MM-yyyy" />
+					<f:convertDateTime pattern = "dd-MM-yyyy" timeZone="Australia/Sydney"/>
 				</h:outputText> </div>
 			</rich:column>
 			<rich:column>
 				<div><h:outputText value="#{item.endDate}">
-					<f:convertDateTime pattern = "dd-MM-yyyy" />
+					<f:convertDateTime pattern = "dd-MM-yyyy" timeZone="Australia/Sydney"/>
 				</h:outputText> </div>
 			</rich:column>
 			

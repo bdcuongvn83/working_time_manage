@@ -24,8 +24,6 @@
 
 		<h:panelGrid columns="2">
 
-			<h:commandButton value="NEW" action="#{workTime01Bean.toRegister}" />
-
 			
 			<h:commandButton value="SEARCH" action="#{workTime01Bean.search}" />
 
@@ -58,12 +56,12 @@
 					<rich:column style="width:20px">empName&#160;</rich:column>
 					<rich:column style="width:10px">wktDate&#160;</rich:column>
 					<rich:column style="width:10px">wkttime&#160;</rich:column>
-					<rich:column style="width:10px">Action&#160;</rich:column>
+					
 
 				</rich:columnGroup>
 			</f:facet>
 			<rich:column style="width:30px">
-				 <h:commandLink value="edit" action="#{workTime01Bean.editWorkingTime(item)}"></h:commandLink>
+				 <h:commandLink value="Edit" action="#{workTime01Bean.editWorkingTime(item)}"></h:commandLink>
 				 
 			</rich:column>
 			
@@ -73,15 +71,13 @@
                         </rich:column>
 			<rich:column>
 				<h:outputText value="#{item.wktDate}">
-					<f:convertDateTime pattern = "dd-MM-yyyy" />
+					<f:convertDateTime pattern = "dd-MM-yyyy"  timeZone="Australia/Sydney" />
 				</h:outputText> 
 			</rich:column>
 			<rich:column>
 				<div>#{item.wkttime}</div>
 			</rich:column>
-			<rich:column>
-				<a href="">Delete</a>
-			</rich:column>
+			
 
 		</rich:dataTable>
 	</div>

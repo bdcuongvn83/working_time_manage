@@ -12,6 +12,7 @@ import java.util.Set;
 import javax.ejb.EJB;
 import javax.enterprise.context.ConversationScoped;
 import javax.enterprise.inject.Produces;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.servlet.http.Cookie;
@@ -76,11 +77,18 @@ public class LoginBean implements Serializable {
 		// 1. kiem tra login ton tai DB
 		if (StringUtils.nullOrblank(userId) || StringUtils.nullOrblank(password)) {
 			errorMessage = "userid or password is required not null";
+			
+			FacesContext.getCurrentInstance().addMessage(null, 
+		                new FacesMessage(FacesMessage.SEVERITY_ERROR, errorMessage, null));
+			 
 			return "";
 		}
 		Employee emp = empployeeService.findEmployee(userId, password);
 		if (emp == null) {
 			errorMessage = "loginEmp is not exits, please input again";
+			FacesContext.getCurrentInstance().addMessage(null, 
+	                new FacesMessage(FacesMessage.SEVERITY_ERROR, errorMessage, null));
+		 
 			return "";
 		}
 		// 2. Neu ton tai=> login sucesss
@@ -196,6 +204,16 @@ public class LoginBean implements Serializable {
 	
 	public LoginUser getLoginUser() {
 		return loginUser;
+	}
+
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	

@@ -32,7 +32,7 @@ public class WorkingTimeDto implements Serializable {
 
 	public WorkingTimeDto(WorkingTime wkTime) {
 		this.setId(wkTime.getId());
-		this.setTaskid(wkTime.getId());
+		this.setTaskid(wkTime.getTaskid());
 		this.setTask(new TaskDto(wkTime.getTask()));
 		this.setWktDate(wkTime.getWktDate());
 		this.setWkttime(wkTime.getWkttime());

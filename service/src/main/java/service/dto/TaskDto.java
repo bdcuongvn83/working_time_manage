@@ -179,6 +179,7 @@ public class TaskDto  implements Serializable{
 		task.setProgress(this.getProgress());
 		task.setProjectid(this.getProjectid());
 		task.setStartdate(this.getStartdate());
+		task.setEnddate(this.getEnddate());
 		task.setTaskEmpId(this.getTaskEmpId());
 		task.setTaskName(this.getTaskName());
 		

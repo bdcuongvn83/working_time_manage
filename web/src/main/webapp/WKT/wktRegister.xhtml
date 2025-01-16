@@ -30,16 +30,16 @@
 			
 		<div class="contents"  style="margin-top: 10px">
 			<h:panelGrid columns="2" styleClass="content">
-				<h:outputText value="Enter taskid" styleClass="item_label" />
-				<h:inputText value="#{workTime02Bean.wktDto.taskid}" required="true" requiredMessage="taskid is required"
+				<h:outputText value="TaskName" styleClass="item_label" />
+				<h:inputText disabled="true" value="#{workTime02Bean.wktDto.task.taskName}" 
 					styleClass="item_input" />
 
 				<h:outputText value="Enter wktDate" styleClass="item_label" />
 				<h:panelGroup>
-					<h:inputText  value="#{workTime02Bean.wktDto.wktDate}" required="true" requiredMessage="wktDate is required"
+					<h:inputText  readonly="true" value="#{workTime02Bean.wktDto.wktDate}" required="true" requiredMessage="wktDate is required"
 						styleClass="item_input" >
-						<f:convertDateTime pattern="yyyy-MM-dd"/> 
-						</h:inputText>
+						<f:convertDateTime pattern="yyyy-MM-dd" timeZone="Australia/Sydney"/> 
+					</h:inputText>
 					<div class="guidance">
 						<h:outputText value="input format: yyyy-MM-dd" />
 					</div>	
@@ -57,7 +57,9 @@
 			<h:commandButton value="BACK" action="#{workTime02Bean.back}" 
 				styleClass="btn_default" immediate="true"/>&#160;&#160;
 				 <h:commandButton value="OK" action="#{workTime02Bean.register}"
-				styleClass="btn_normal" />
+				styleClass="btn_normal" >
+				  <f:param name="iframeTarget" value="iframe-content" />
+				</h:commandButton>
 		</div>
 
 	</h:form>

@@ -23,5 +23,4 @@ public interface EmployeeService {
 	public void deleteEmployee(Long empId);
 	public void removeEmployee(Long empId);
 	
-	
 }

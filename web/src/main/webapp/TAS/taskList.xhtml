@@ -46,9 +46,11 @@
 				<rich:columnGroup>
 					<!-- DragDrop -->
 					<rich:column style="width:10px">Id&#160;</rich:column>
-					<rich:column style="width:10px">ProjectName&#160;</rich:column>
 					<rich:column style="width:20px">taskName&#160;</rich:column>
+					<rich:column style="width:10px">ProjectName&#160;</rich:column>
 					<rich:column style="width:10px">EmpName&#160;</rich:column>
+					<rich:column style="width:10px">StartDate&#160;</rich:column>
+					<rich:column style="width:10px">EndDate&#160;</rich:column>
 					<rich:column style="width:10px">actualStartDate&#160;</rich:column>
 					<rich:column style="width:10px">actualEndDate&#160;</rich:column>
 					<rich:column style="width:10px">Progress&#160;</rich:column>
@@ -61,26 +63,39 @@
 			<rich:column style="width:100px">#{item.id}
                         </rich:column>
 			
+             <rich:column style="width:100px"><a href="">#{item.taskName}</a>
+             </rich:column>
 			<rich:column style="width:100px">#{item.project.projectName}
                         </rich:column>
-             <rich:column style="width:100px">#{item.taskName}
-             </rich:column>
              <rich:column style="width:100px">#{item.taskemp.empName}
              </rich:column>
+              <rich:column style="width:100px">
+             <h:outputText value="#{item.startdate}">
+					<f:convertDateTime pattern = "dd-MM-yyyy" timeZone="Australia/Sydney"/>
+				</h:outputText>
+             
+             </rich:column>
+             <rich:column style="width:100px">
+	             <h:outputText value="#{item.enddate}">
+						<f:convertDateTime pattern = "dd-MM-yyyy" timeZone="Australia/Sydney"/>
+					</h:outputText>
+             
+             </rich:column>
+             
              <rich:column style="width:100px">
              <h:outputText value="#{item.actualStartDate}">
-					<f:convertDateTime pattern = "dd-MM-yyyy" />
+					<f:convertDateTime pattern = "dd-MM-yyyy" timeZone="Australia/Sydney"/>
 				</h:outputText>
              
              </rich:column>
              <rich:column style="width:100px">
 	             <h:outputText value="#{item.actualEndDate}">
-						<f:convertDateTime pattern = "dd-MM-yyyy	" />
+						<f:convertDateTime pattern = "dd-MM-yyyy" timeZone="Australia/Sydney"/>
 					</h:outputText>
              
              </rich:column>
 			<rich:column>
-				<div>#{item.progress}</div>
+				<div>(0%)In progress</div>
 			</rich:column>
 			<rich:column>
 				<div>#{item.estTime}</div>
