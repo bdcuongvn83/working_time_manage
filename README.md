@@ -39,6 +39,9 @@ https://github.com/user-attachments/assets/6e9f1e56-e232-4c34-a224-e7905ab5476c
 
 # ERD structure:  
 
+![image](https://github.com/user-attachments/assets/a5047990-7104-404b-b451-b40aab8bc184)
+
+
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
