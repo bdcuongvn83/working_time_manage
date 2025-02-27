@@ -1,6 +1,6 @@
 
 **Author**: DUC CUONG BUI  
-**Project:** School manage aspnetcore  
+**Project:** working_time_manage  
 **GitHub Repository URL**: (https://github.com/bdcuongvn83/working_time_manage.git))  
 **License**: GPL License  
 
